@@ -44,7 +44,7 @@ makestuff/Makefile:
 -include makestuff/os.mk
 
 -include makestuff/makeR.mk
-# -include makestuff/rpkg.mk
+-include makestuff/rpkg.mk
 
 -include makestuff/git.mk
 -include makestuff/visual.mk

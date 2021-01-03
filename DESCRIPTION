@@ -1,0 +1,15 @@
+Package: NAMEHERE
+Title: TITLEHERE
+Description: DESCRIBE
+Version: 0.0.1
+Authors@R: c(person("Jonathan","Dushoff",email="dushoff@mcmaster.ca",role=c("aut","cre"))
+	, person("Nelson","Mandela",role="aut"))
+Depends: R (>= 3.5.0)
+Imports:
+Suggests:
+RoxygenNote: 7.1.1
+Encoding: UTF-8
+License: GPL
+LazyData: yes
+VignetteBuilder: knitr
+URL: https://github.com/mac-theobio/ URLHERE
