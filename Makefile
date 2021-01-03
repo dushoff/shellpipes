@@ -13,10 +13,8 @@ vim_session:
 Sources += DESCRIPTION .Rbuildignore NAMESPACE
 Sources += $(wildcard R/*.R)
 
-## R/gen.R (generalized exp/log)
-## R/kernel.R deal with discretized kernels
-
 ## pkgall:
+## quickinstall:
 
 ######################################################################
 
@@ -43,7 +41,7 @@ makestuff/Makefile:
 
 -include makestuff/os.mk
 
--include makestuff/makeR.mk
+## -include makestuff/makeR.mk
 -include makestuff/rpkg.mk
 
 -include makestuff/git.mk

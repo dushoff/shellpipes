@@ -1,9 +1,8 @@
-Package: NAMEHERE
-Title: TITLEHERE
-Description: DESCRIBE
+Package: rpipes
+Title: pipes for using R with make
+Description: Utilities for using make with R. 
 Version: 0.0.1
-Authors@R: c(person("Jonathan","Dushoff",email="dushoff@mcmaster.ca",role=c("aut","cre"))
-	, person("Nelson","Mandela",role="aut"))
+Authors@R: c(person("Jonathan","Dushoff",email="dushoff@mcmaster.ca",role=c("aut","cre")))
 Depends: R (>= 3.5.0)
 Imports:
 Suggests:
@@ -12,4 +11,4 @@ Encoding: UTF-8
 License: GPL
 LazyData: yes
 VignetteBuilder: knitr
-URL: https://github.com/mac-theobio/ URLHERE
+URL: https://github.com/dushoff/rpipes

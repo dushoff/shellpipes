@@ -2,3 +2,12 @@ dev/
 Makefile
 makestuff/
 rpkgbuild/
+all.time
+commit.time
+content.mk
+make.log
+rpipes.*
+target.mk
+up.time
+ 
+
