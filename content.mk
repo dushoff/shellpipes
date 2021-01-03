@@ -1,14 +1,3 @@
-## This is rpipes
-
-current: target
--include target.mk
-
-# -include makestuff/perl.def
-
-vim_session:
-	bash -cl "vmt"
-
-######################################################################
 
 Sources += DESCRIPTION .Rbuildignore NAMESPACE
 Sources += $(wildcard R/*.R)
@@ -31,7 +20,7 @@ dev/gen.Rout: dev/gen.R
 
 Sources += Makefile
 
-Sources += content.mk
+## Sources += content.mk
 ## include content.mk
 
 Ignore += makestuff
@@ -44,7 +33,9 @@ makestuff/Makefile:
 -include makestuff/os.mk
 
 -include makestuff/makeR.mk
-# -include makestuff/rpkg.mk
+-include makestuff/rpkg.mk
+## -include makestuff/maker.mk ## Weird manual.log errors
 
 -include makestuff/git.mk
 -include makestuff/visual.mk
+
