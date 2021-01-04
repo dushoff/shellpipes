@@ -20,14 +20,17 @@ Sources += $(wildcard R/*.R)
 
 Sources += $(wildcard dev/*.R)
 
-dev/gen.Rout: dev/gen.R
+set.Rout: dev/set.R
+	$(makeR)
+
+look.Rout: dev/look.R set.rda
 	$(makeR)
 
 ######################################################################
 
 ### Makestuff
 
-Sources += Makefile
+Sources += Makefile notes.txt
 
 Sources += content.mk
 ## include content.mk
@@ -41,7 +44,7 @@ makestuff/Makefile:
 
 -include makestuff/os.mk
 
-## -include makestuff/makeR.mk
+-include makestuff/makeR.mk
 -include makestuff/rpkg.mk
 
 -include makestuff/git.mk

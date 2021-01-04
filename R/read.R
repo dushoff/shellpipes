@@ -55,8 +55,8 @@ loadEnvironments <- function(envl, parent=parent.frame())
 	}
 }
 
-#' return a bunch of environments as a list of environments
-#' @param pat pattern to macth
+#' read environment files and return a list of environments
+#' @param pat pattern to match
 #' @param fl file list to select from (makeArgs by default)
 #' @param exts extensions to select
 #' @param names a list of names for the environments found
@@ -86,3 +86,41 @@ loadEnvironmentList <- function(pat = NULL
 	names(el) <- names
 	return(el)
 }
+
+## FIXME Case-insensitive extensions
+## FIXME csvRead etc. as wrappers
+tableRead <- function(pat=NULL, delim=" ", exts=c("csv", "CSV", "ssv", "scsv", "tsv")
+	, fl = makeArgs(), ...
+){
+	return(readr::read_delim(matchFile(pat, fl, exts), delim, ...))
+}
+
+csvRead <- function(pat=NULL, exts=c("csv", "CSV")
+	, fl = makeArgs(), ...
+){
+	return(readr::read_csv(matchFile(pat, fl, exts), ...))
+}
+
+tsvRead <- function(pat=NULL, exts=c("tsv", "TSV")
+	, fl = makeArgs(), ...
+){
+	return(readr::read_tsv(matchFile(pat, fl, exts), ...))
+}
+
+## Not tested! Is it important?
+csvReadList <- function(pat=NULL, exts=c("csv", "CSV")
+	, fl = makeArgs(), ...
+	, names=NULL, trim = "\\.[^.]*$"
+){
+	fl <- fileSelect(fl, exts, pat)
+	if(is.null(names)){
+		names = sub(trim, "", fl)
+	}
+	stopifnot(length(names)==length(fl))
+	csvl <- lapply(fl
+		, function(fn){readr::read_csv(fn, ...)}
+	)
+	names(csvl) <- names
+	return(csvl)
+}
+

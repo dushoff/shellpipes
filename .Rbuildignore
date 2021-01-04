@@ -9,5 +9,7 @@ make.log
 rpipes.*
 target.mk
 up.time
- 
-
+.*\.Rout.*
+.*\.rtmp
+.*\.Rlog
+notes.txt

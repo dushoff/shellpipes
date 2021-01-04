@@ -4,8 +4,8 @@ Description: Utilities for using make with R.
 Version: 0.0.1
 Authors@R: c(person("Jonathan","Dushoff",email="dushoff@mcmaster.ca",role=c("aut","cre")))
 Depends: R (>= 3.5.0)
-Imports:
-Suggests:
+Imports: readr, grDevices, utils
+Suggests: knitr
 RoxygenNote: 7.1.1
 Encoding: UTF-8
 License: GPL

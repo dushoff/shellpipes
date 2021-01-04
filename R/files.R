@@ -22,6 +22,8 @@ matchFile <-  function(pat, fl = makeArgs(), exts=NULL){
 	return(f)
 }
 
+callArgs = NULL
+
 #' Not exported: makeArgs
 #' A service function to get the make arguments
 #' when R was called interactively, these come from a variable called callArgs
@@ -29,7 +31,7 @@ matchFile <-  function(pat, fl = makeArgs(), exts=NULL){
 #' @param call pass callArgs directly
 makeArgs <- function(call=callArgs){
 	if(interactive()){
-		if (!exists("callArgs"))
+		if (!is.null("callArgs"))
 			stop("Define callArgs to use makeR files; see .args file?")
 		return(strsplit(call, " ")[[1]])
 	}
