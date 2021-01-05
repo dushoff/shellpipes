@@ -10,9 +10,6 @@ vim_session:
 
 ######################################################################
 
-Sources += DESCRIPTION .Rbuildignore NAMESPACE
-Sources += $(wildcard R/*.R)
-
 ## pkgall:
 ## quickinstall:
 
