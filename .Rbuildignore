@@ -12,4 +12,6 @@ up.time
 .*\.Rout.*
 .*\.rtmp
 .*\.Rlog
+.*\.rda
+.*\.log
 notes.txt

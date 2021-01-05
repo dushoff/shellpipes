@@ -4,16 +4,16 @@
 \alias{makeGraphics}
 \title{Open a graphics file for saving (internal function; exported for legacy reasons; use startGraphics)}
 \usage{
-makeGraphics(..., target = makeArgs()[[1]], otype = NULL, ext = otype)
+makeGraphics(target = makeArgs()[[1]], otype = NULL, ext = otype, ...)
 }
 \arguments{
-\item{...}{arguments to pass to grDevices call}
-
 \item{target}{stem of filename (defaults to the target of the script)}
 
 \item{otype}{type of file to write (will use pdf if not specified)}
 
 \item{ext}{file extension (will use pdf.tmp if not specified)}
+
+\item{...}{arguments to pass to grDevices call}
 }
 \description{
 Open a graphics file for saving (internal function; exported for legacy reasons; use startGraphics)

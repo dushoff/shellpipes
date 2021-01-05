@@ -5,16 +5,14 @@
 \title{Open a graphics file for saving}
 \usage{
 startGraphics(
-  ...,
   target = makeArgs()[[1]],
   otype = "pdf",
   ext = otype,
-  always = FALSE
+  always = FALSE,
+  ...
 )
 }
 \arguments{
-\item{...}{arguments to pass to grDevices call (via makeGraphics)}
-
 \item{target}{stem of filename (defaults to the target of the script)}
 
 \item{otype}{type of file to write (defaults to pdf)}
@@ -22,6 +20,8 @@ startGraphics(
 \item{ext}{file extension (defaults to otype)}
 
 \item{always}{open file even if called from interactive model}
+
+\item{...}{arguments to pass to grDevices call (via makeGraphics)}
 }
 \description{
 Open a graphics file for saving
