@@ -22,7 +22,8 @@ matchFile <-  function(pat, fl = makeArgs(), exts=NULL){
 	return(f)
 }
 
-callArgs = NULL
+## callArgs = NULL
+## Not sure how to override this
 
 #' Not exported: makeArgs
 #' A service function to get the make arguments
@@ -31,7 +32,7 @@ callArgs = NULL
 #' @param call pass callArgs directly
 makeArgs <- function(call=callArgs){
 	if(interactive()){
-		if (!is.null("callArgs"))
+		if (is.null(call))
 			stop("Define callArgs to use makeR files; see .args file?")
 		return(strsplit(call, " ")[[1]])
 	}

@@ -21,6 +21,8 @@ set.Rout: dev/set.R
 	$(makeR)
 
 look.Rout: dev/look.R set.rda
+
+plot.Rout: dev/plot.R set.rda 
 	$(makeR)
 
 ######################################################################
