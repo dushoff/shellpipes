@@ -1,6 +1,6 @@
 library(rpipes)
 
-callArgs <- "plot.Rout dev/plot.R set.rda"
+rpcall("plot.Rout dev/plot.R met.rda")
 
 startGraphics()
 commandEnvironments()

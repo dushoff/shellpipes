@@ -1,5 +1,4 @@
 
-
 #' Get a targetname
 #' @param ext file extension for output
 #' @param suffix file extension of provided name (.Rout by default)
@@ -22,19 +21,27 @@ matchFile <-  function(pat, fl = makeArgs(), exts=NULL){
 	return(f)
 }
 
-## callArgs = NULL
-## Not sure how to override this
+
+rpipesenv <- new.env()
+rpipesenv$callArgs <- NULL
+
+#' set callArgs for interactive use
+#' @param call command-line call as generated in .Rout.arg
+#' @export
+rpcall <- function(call){
+	rpipesenv$callArgs <- call
+	invisible(call)
+}
 
 #' Not exported: makeArgs
 #' A service function to get the make arguments
 #' when R was called interactively, these come from a variable called callArgs
 #' otherwise parsed from the command line
-#' @param call pass callArgs directly
-makeArgs <- function(call=callArgs){
+makeArgs <- function(){
 	if(interactive()){
-		if (is.null(call))
+		if (is.null(rpipesenv$callArgs))
 			stop("Define callArgs to use makeR files; see .args file?")
-		return(strsplit(call, " ")[[1]])
+		return(strsplit(rpipesenv$callArgs, " ")[[1]])
 	}
 	return(commandArgs(TRUE))
 }

@@ -7,10 +7,7 @@ A service function to get the make arguments
 when R was called interactively, these come from a variable called callArgs
 otherwise parsed from the command line}
 \usage{
-makeArgs(call = callArgs)
-}
-\arguments{
-\item{call}{pass callArgs directly}
+makeArgs()
 }
 \description{
 Not exported: makeArgs
