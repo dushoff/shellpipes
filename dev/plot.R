@@ -1,4 +1,4 @@
-library(rpipes)
+library(shellpipes)
 rpcall("plot.Rout dev/plot.R set.rda")
 
 startGraphics()

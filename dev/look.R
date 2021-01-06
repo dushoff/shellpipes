@@ -1,4 +1,4 @@
-library(rpipes)
+library(shellpipes)
 
 commandEnvironments()
 
