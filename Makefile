@@ -43,7 +43,7 @@ makestuff/Makefile:
 
 -include makestuff/os.mk
 
--include makestuff/makeR.mk
+-include makestuff/pipeR.mk
 -include makestuff/rpkg.mk
 
 -include makestuff/git.mk
