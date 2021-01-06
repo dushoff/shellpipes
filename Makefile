@@ -1,4 +1,4 @@
-## This is rpipes
+## This is shellpipes
 
 current: target
 -include target.mk
