@@ -29,7 +29,7 @@ plot.Rout: dev/plot.R set.rda
 
 ### Makestuff
 
-Sources += Makefile notes.txt
+Sources += Makefile notes.txt README.md
 
 Sources += content.mk
 ## include content.mk
