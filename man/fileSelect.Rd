@@ -2,10 +2,8 @@
 % Please edit documentation in R/files.R
 \name{fileSelect}
 \alias{fileSelect}
-\title{Not exported: fileSelect
-Select a list of filenames from a list by extension
-… and optionally by pattern as well
-not currently exported; used by other file selectors}
+\title{Select a list of filenames from a list by extension
+… and optionally by pattern as well}
 \usage{
 fileSelect(fl = makeArgs(), exts = NULL, pat = NULL)
 }
@@ -17,8 +15,6 @@ fileSelect(fl = makeArgs(), exts = NULL, pat = NULL)
 \item{pat}{a pattern to filter by}
 }
 \description{
-Not exported: fileSelect
 Select a list of filenames from a list by extension
 … and optionally by pattern as well
-not currently exported; used by other file selectors
 }

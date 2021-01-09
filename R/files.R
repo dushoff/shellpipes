@@ -46,13 +46,12 @@ makeArgs <- function(){
 	return(commandArgs(TRUE))
 }
 
-#' Not exported: fileSelect
 #' Select a list of filenames from a list by extension
 #' … and optionally by pattern as well
-#' not currently exported; used by other file selectors
 #' @param fl filelist (makeArgs by default)
 #' @param exts a list of extensions to match (. is added here)
 #' @param pat a pattern to filter by
+#' @export
 fileSelect <- function(fl = makeArgs(), exts=NULL, pat=NULL)
 {
 	if(!is.null(exts)){

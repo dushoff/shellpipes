@@ -2,6 +2,7 @@
 
 export(commandEnvironments)
 export(csvSave)
+export(fileSelect)
 export(getEnvironment)
 export(loadEnvironmentList)
 export(loadEnvironments)
