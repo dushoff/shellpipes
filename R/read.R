@@ -87,27 +87,55 @@ loadEnvironmentList <- function(pat = NULL
 	return(el)
 }
 
+## readr stuff
 ## FIXME Case-insensitive extensions
 ## FIXME csvRead etc. as wrappers
+
+#' read a table matched from a list of files
+#' @param pat optional string pattern to match
+#' @param delim delimiter for reading files
+#' @param exts extensions for the table file
+#' @param fl file list (defaults to command arguments)
+#' @param ... additional parameters for read_delim
+#' @export
 tableRead <- function(pat=NULL, delim=" ", exts=c("csv", "CSV", "ssv", "scsv", "tsv")
 	, fl = makeArgs(), ...
 ){
 	return(readr::read_delim(matchFile(pat, fl, exts), delim, ...))
 }
 
+#' read a csv matched from a list of files
+#' @param pat optional string pattern to match
+#' @param exts extensions for the table file
+#' @param fl file list (defaults to command arguments)
+#' @param ... additional parameters for read_csv
+#' @export
 csvRead <- function(pat=NULL, exts=c("csv", "CSV")
 	, fl = makeArgs(), ...
 ){
 	return(readr::read_csv(matchFile(pat, fl, exts), ...))
 }
 
+#' read a tsv matched from a list of files
+#' @param pat optional string pattern to match
+#' @param exts extensions for the table file
+#' @param fl file list (defaults to command arguments)
+#' @param ... additional parameters for read_tsv
+#' @export
 tsvRead <- function(pat=NULL, exts=c("tsv", "TSV")
 	, fl = makeArgs(), ...
 ){
 	return(readr::read_tsv(matchFile(pat, fl, exts), ...))
 }
 
-## Not tested! Is it important?
+#' read csv files into a list
+#' @param pat optional string pattern to match
+#' @param exts extensions for the table file
+#' @param fl file list (defaults to command arguments)
+#' @param ... additional parameters for read_csv
+#' @param names for the new list
+#' @param trim if names are not given, take stuff off the end of the matched filenames (defaults to the last "." and everything thereafter)
+#' @export
 csvReadList <- function(pat=NULL, exts=c("csv", "CSV")
 	, fl = makeArgs(), ...
 	, names=NULL, trim = "\\.[^.]*$"
