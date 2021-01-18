@@ -6,7 +6,11 @@ An R package for working through Makefile and command lines. Designed to be used
 
 From inside R:
 
-`remotes::install_github("dushoff/shellpipes"`)
+`remotes::install_github("dushoff/shellpipes")`
+
+This will fail for old versions of "remotes", because the default branch is now "main" instead of "master". `, ref="main` before the last paren may well fix this problem, but probably what you want to do is update remotes:
+
+`install_packages("remotes")`
 
 ## Overview
 
