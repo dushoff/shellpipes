@@ -9,6 +9,7 @@ startGraphics(
   otype = "pdf",
   ext = otype,
   always = FALSE,
+  desc = NULL,
   ...
 )
 }
@@ -22,6 +23,8 @@ startGraphics(
 \item{always}{open file even if called from interactive model}
 
 \item{...}{arguments to pass to grDevices call (via makeGraphics)}
+
+\item{descriptor}{text to replace Rout in default target}
 }
 \description{
 Open a graphics file for saving

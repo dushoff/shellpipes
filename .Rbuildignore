@@ -6,7 +6,7 @@ all.time
 commit.time
 content.mk
 make.log
-rpipes.*
+shellpipes.*
 target.mk
 up.time
 .*\.Rout.*

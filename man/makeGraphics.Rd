@@ -4,7 +4,13 @@
 \alias{makeGraphics}
 \title{Open a graphics file for saving (internal function; exported for legacy reasons; use startGraphics)}
 \usage{
-makeGraphics(target = makeArgs()[[1]], otype = NULL, ext = otype, ...)
+makeGraphics(
+  target = makeArgs()[[1]],
+  otype = NULL,
+  ext = otype,
+  desc = NULL,
+  ...
+)
 }
 \arguments{
 \item{target}{stem of filename (defaults to the target of the script)}
@@ -14,6 +20,8 @@ makeGraphics(target = makeArgs()[[1]], otype = NULL, ext = otype, ...)
 \item{ext}{file extension (will use pdf.tmp if not specified)}
 
 \item{...}{arguments to pass to grDevices call}
+
+\item{descriptor}{text to replace Rout in default target}
 }
 \description{
 Open a graphics file for saving (internal function; exported for legacy reasons; use startGraphics)
