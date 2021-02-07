@@ -19,9 +19,9 @@ makeGraphics(
 
 \item{ext}{file extension (will use pdf.tmp if not specified)}
 
-\item{...}{arguments to pass to grDevices call}
+\item{desc}{text to replace Rout in default target}
 
-\item{descriptor}{text to replace Rout in default target}
+\item{...}{arguments to pass to grDevices call}
 }
 \description{
 Open a graphics file for saving (internal function; exported for legacy reasons; use startGraphics)

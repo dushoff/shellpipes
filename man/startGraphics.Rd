@@ -20,11 +20,11 @@ startGraphics(
 
 \item{ext}{file extension (defaults to otype)}
 
-\item{always}{open file even if called from interactive model}
+\item{always}{open file even if called from interactive mode}
+
+\item{desc}{text to replace Rout in default target}
 
 \item{...}{arguments to pass to grDevices call (via makeGraphics)}
-
-\item{descriptor}{text to replace Rout in default target}
 }
 \description{
 Open a graphics file for saving
