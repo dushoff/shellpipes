@@ -90,6 +90,7 @@ loadEnvironmentList <- function(pat = NULL
 ## readr stuff
 ## FIXME Case-insensitive extensions
 ## FIXME csvRead etc. as wrappers
+## FIXME default delimiter table
 
 #' read a table matched from a list of files
 #' @param pat optional string pattern to match
