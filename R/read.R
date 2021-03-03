@@ -19,14 +19,25 @@ sourceFiles <- function(fl=makeArgs()
 #' @param exts extensions to select
 #' @param parent (defaults to parent.frame())
 #' @export
-commandEnvironments <- function(fl = makeArgs()
-	, exts = c("RData", "rda", "rdata"), parent=parent.frame()
+loadEnvironments <- function(fl = makeArgs()
+	, exts = c("RData", "rda", "rdata"), parent=globalenv()
 )
 {
 	envl <- fileSelect(fl, exts)
-	loadEnvironments(envl, parent)
+	for (env in envl){
+		load(env, parent)
+	}
 	invisible(envl)
 }
+
+#' Read environments from a file list to a single environment
+#' Deprecated name (a trivial wrapper now for loadEnvironments)
+#' @param ... parameters to pass to loadEnvironments
+#' @export
+commandEnvironments <- function(...){
+	loadEnvironments(...)
+}
+
 
 #' get a single environment using matchFile, load it and return it
 #' @param pat pattern to macth
@@ -42,17 +53,6 @@ getEnvironment <- function(pat="", fl = makeArgs()
 	e <- new.env()
 	load(f, e)
 	return(e)
-}
-
-#' Load a list of environments
-#' @param envl a list of environments
-#' @param parent (defaults to parent.frame())
-#' @export
-loadEnvironments <- function(envl, parent=parent.frame())
-{
-	for (env in envl){
-		load(env, parent)
-	}
 }
 
 #' read environment files and return a list of environments
