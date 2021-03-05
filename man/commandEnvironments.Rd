@@ -2,21 +2,19 @@
 % Please edit documentation in R/read.R
 \name{commandEnvironments}
 \alias{commandEnvironments}
-\title{Read environments from a file list to a single environment}
+\title{Read environments from a file list to a single environment
+Deprecated name (a trivial wrapper now for loadEnvironments)
+FIXME should just be an alias, if I understood rdnames}
 \usage{
-commandEnvironments(
-  fl = makeArgs(),
-  exts = c("RData", "rda", "rdata"),
-  parent = parent.frame()
-)
+commandEnvironments(..., parent = parent.frame())
 }
 \arguments{
-\item{fl}{file list to select from (makeArgs by default)}
+\item{...}{parameters to pass to loadEnvironments}
 
-\item{exts}{extensions to select}
-
-\item{parent}{(defaults to parent.frame())}
+\item{parent}{get and pass on our parent}
 }
 \description{
 Read environments from a file list to a single environment
+Deprecated name (a trivial wrapper now for loadEnvironments)
+FIXME should just be an alias, if I understood rdnames
 }

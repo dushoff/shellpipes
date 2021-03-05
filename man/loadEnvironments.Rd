@@ -2,15 +2,21 @@
 % Please edit documentation in R/read.R
 \name{loadEnvironments}
 \alias{loadEnvironments}
-\title{Load a list of environments}
+\title{Read environments from a file list to a single environment}
 \usage{
-loadEnvironments(envl, parent = parent.frame())
+loadEnvironments(
+  fl = makeArgs(),
+  exts = c("RData", "rda", "rdata"),
+  parent = parent.frame()
+)
 }
 \arguments{
-\item{envl}{a list of environments}
+\item{fl}{file list to select from (makeArgs by default)}
+
+\item{exts}{extensions to select}
 
 \item{parent}{(defaults to parent.frame())}
 }
 \description{
-Load a list of environments
+Read environments from a file list to a single environment
 }

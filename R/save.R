@@ -31,5 +31,5 @@ rdsSave <- function(vname, target = targetname(), ext="rds"){
 #' @param ext file extension (.Rout.csv)
 #' @export
 csvSave <- function(..., target = targetname(), ext="Rout.csv"){
-	utils::write.csv(file=paste(target, ext, sep="."), ...)
+	readr::write_csv(file=paste(target, ext, sep="."), ...)
 }

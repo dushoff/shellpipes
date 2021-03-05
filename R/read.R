@@ -14,13 +14,66 @@ sourceFiles <- function(fl=makeArgs()
 	}
 }
 
+######################################################################
+
+# rds files
+
+#' Read an rds file matched from a list of files
+#' @param pat optional string pattern to match
+#' @param exts extensions for the table file
+#' @param fl file list (defaults to command arguments)
+#' @param refhook pass to readRDS
+#' @export
+rdsRead <- function(pat=NULL, exts=c("rds", "Rds", "RDS")
+	, fl = makeArgs(), refhook=NULL
+){
+	return(readRDS(matchFile(pat, fl, exts), refhook))
+}
+
+#' read rds files and return a list of objects
+#' @param pat pattern to match
+#' @param fl file list to select from (makeArgs by default)
+#' @param exts extensions to select
+#' @param names a list of names for the environments found
+#' @param trim a pattern for making names from the file names (not used when names if provided)
+#' @param refhook pass to readRDS
+#' @export
+rdsReadList <- function(pat = NULL
+	, fl = makeArgs()
+	, exts = c("rds", "RDS")
+	, names=NULL, trim = "\\.[^.]*$"
+	, refhook=NULL
+)
+{
+	rdsl <- fileSelect(fl, exts, pat)
+	if(is.null(names)){
+		names = sub(trim, "", rdsl)
+	}
+	stopifnot(length(names)==length(rdsl))
+	rl <- list()
+	if(length(rdsl)==0)
+	{
+		warning("No files matched in rdsReadList")
+		return(NULL)
+	}
+	for (i in 1:length(rdsl)){
+		rl[[i]] <- readRDS(rdsl[[i]], refhook)
+	}
+	names(rl) <- names
+	return(rl)
+}
+
+######################################################################
+
+# environment (rda) files
+
 #' Read environments from a file list to a single environment
 #' @param fl file list to select from (makeArgs by default)
 #' @param exts extensions to select
 #' @param parent (defaults to parent.frame())
 #' @export
 loadEnvironments <- function(fl = makeArgs()
-	, exts = c("RData", "rda", "rdata"), parent=globalenv()
+	, exts = c("RData", "rda", "rdata"), parent=parent.frame()
 )
 {
 	envl <- fileSelect(fl, exts)
@@ -32,10 +85,12 @@ loadEnvironments <- function(fl = makeArgs()
 
 #' Read environments from a file list to a single environment
 #' Deprecated name (a trivial wrapper now for loadEnvironments)
+#' FIXME should just be an alias, if I understood rdnames
 #' @param ... parameters to pass to loadEnvironments
+#' @param parent get and pass on our parent
 #' @export
-commandEnvironments <- function(...){
-	loadEnvironments(...)
+commandEnvironments <- function(..., parent=parent.frame()){
+	loadEnvironments(..., parent=parent)
 }
 
 
@@ -86,6 +141,8 @@ loadEnvironmentList <- function(pat = NULL
 	names(el) <- names
 	return(el)
 }
+
+######################################################################
 
 ## readr stuff
 ## FIXME Case-insensitive extensions
