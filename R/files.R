@@ -14,7 +14,7 @@ targetname <- function(ext="", suffix="\\.Rout", fn = makeArgs()[[1]]){
 #' @param fl is the list of filenames to search (makeArgs by default)
 #' @param exts is a list of allowed extensions
 #' @export
-matchFile <-  function(pat, fl = makeArgs(), exts=NULL){
+matchFile <-  function(pat=NULL, fl = makeArgs(), exts=NULL){
 	f <- fileSelect(fl, exts, pat)
 	if (length(f) == 0) stop("No match for ", pat, " in ", fl)
 	if (length(f) > 1) stop("More than one match for ", pat, " in ", fl)
