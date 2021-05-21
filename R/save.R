@@ -26,10 +26,19 @@ rdsSave <- function(vname, target = targetname(), ext="rds"){
 }
 
 #' Save a table to csv
-#' @param ... arguments to write.csv (typically, name of variable to save)
+#' @param ... arguments to write_csv (typically, name of variable to save)
 #' @param target stem of file to save to (defaults to name from call)
 #' @param ext file extension (.Rout.csv)
 #' @export
 csvSave <- function(..., target = targetname(), ext="Rout.csv"){
 	readr::write_csv(file=paste(target, ext, sep="."), ...)
+}
+
+#' Save a table to tsv
+#' @param ... arguments to write_tsv (typically, name of variable to save)
+#' @param target stem of file to save to (defaults to name from call)
+#' @param ext file extension (.Rout.tsv)
+#' @export
+tsvSave <- function(..., target = targetname(), ext="Rout.tsv"){
+	readr::write_tsv(file=paste(target, ext, sep="."), ...)
 }
