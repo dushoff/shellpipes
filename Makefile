@@ -1,5 +1,6 @@
 ## This is shellpipes
 ## https://dushoff.github.io/shellpipes/
+## https://github.com/dushoff/shellpipes.git
 
 current: target
 -include target.mk
