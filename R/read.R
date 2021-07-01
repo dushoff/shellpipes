@@ -73,7 +73,7 @@ rdsReadList <- function(pat = NULL
 #' @param parent (defaults to parent.frame())
 #' @export
 loadEnvironments <- function(fl = makeArgs()
-	, exts = c("RData", "rda", "rdata"), parent=parent.frame()
+	, exts = c("RData", "Rdata", "rda", "rdata"), parent=parent.frame()
 )
 {
 	envl <- fileSelect(fl, exts)
