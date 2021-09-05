@@ -25,6 +25,15 @@ rdsSave <- function(vname, target = targetname(), ext="rds"){
 	saveRDS(vname, file=paste(target, ext, sep="."))
 }
 
+#' Write to a different kind of file
+#' @param ... arguments to sync
+#' @param target stem of file to save to (defaults to name from call)
+#' @param ext file extension (.Rout.txt)
+#' @export
+outFile <- function(..., target = targetname(), ext="Rout.txt"){
+	sink(file=paste(target, ext, sep="."), ...)
+}
+
 #' Save a table to csv
 #' @param ... arguments to write_csv (typically, name of variable to save)
 #' @param target stem of file to save to (defaults to name from call)
