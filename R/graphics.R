@@ -38,8 +38,9 @@ makeGraphics <- function(target = makeArgs()[[1]]
 	get(otype)(..., file=fn)
 }
 
-
-#' Apparently ggplot doesn't support pdf well ☹
+#' save a ggplot object with a name derived from the target name
+#' this is good because ggplot objects don't always play well with print
+#' and because just it's good to attach mnemonic names when you have a lot of files
 #' @param g graphical object to print
 #' @param target stem of filename (defaults to the target of the script)
 #' @param ext file extension (will use pdf if not specified)
@@ -53,6 +54,29 @@ saveGG <- function(g
 	, ...
 )
 {
+	if(is.null(ext)) ext = "pdf"
+	fn <- paste0(target, ".", ext)
+	fn <- sub("Rout", desc, fn)
+	ggplot2::ggsave(fn, plot=g, ...)
+}
+
+#' saveGG and also print to stdout(for quick reference)
+#' @param g graphical object to print and save
+#' @param target stem of filename (defaults to the target of the script)
+#' @param ext file extension (will use pdf if not specified)
+#' @param desc text to replace Rout in default target (ggp by default)
+#' @param ... arguments to pass to ggsave call
+#' @export
+teeGG <- function(g
+	, target = makeArgs()[[1]]
+	, ext = "pdf"
+	, desc = "ggp"
+	, print_title = desc
+	, ...
+)
+{
+	pg <- ifelse(is.null(print_title), g, g+ggtitle(print_title))
+	print(g)
 	if(is.null(ext)) ext = "pdf"
 	fn <- paste0(target, ".", ext)
 	fn <- sub("Rout", desc, fn)
