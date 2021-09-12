@@ -75,10 +75,12 @@ teeGG <- function(g
 	, ...
 )
 {
-	pg <- ifelse(is.null(print_title), g, g+ggtitle(print_title))
-	print(g)
 	if(is.null(ext)) ext = "pdf"
 	fn <- paste0(target, ".", ext)
 	fn <- sub("Rout", desc, fn)
 	ggplot2::ggsave(fn, plot=g, ...)
+
+	if(!is.null(print_title))
+		g <- g+ggtitle(print_title)
+	print(g)
 }
