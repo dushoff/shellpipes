@@ -57,7 +57,7 @@ saveGG <- function(g
 	if(is.null(ext)) ext = "pdf"
 	fn <- paste0(target, ".", ext)
 	fn <- sub("Rout", desc, fn)
-	ggplot2::ggsave(fn, plot=g, ...)
+	ggplot2::ggsave(file=fn, plot=g, ...)
 }
 
 #' saveGG and also print to stdout(for quick reference)
@@ -78,7 +78,7 @@ teeGG <- function(g
 	if(is.null(ext)) ext = "pdf"
 	fn <- paste0(target, ".", ext)
 	fn <- sub("Rout", desc, fn)
-	ggplot2::ggsave(fn, plot=g, ...)
+	ggplot2::ggsave(file=fn, plot=g, ...)
 
 	if(!is.null(print_title))
 		g <- g+ggtitle(print_title)
