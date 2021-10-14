@@ -38,12 +38,11 @@ rpcall <- function(call){
 #' when R was called interactively, these come from a variable called callArgs
 #' otherwise parsed from the command line
 makeArgs <- function(){
-	if(interactive()){
-		if (is.null(rpipesenv$callArgs))
-			stop("Define callArgs to use makeR files; see .args file?")
-		return(strsplit(rpipesenv$callArgs, " ")[[1]])
-	}
-	return(commandArgs(TRUE))
+	if ("shellpipes" %in% commandArgs(TRUE))
+		return(commandArgs(TRUE))
+	if (is.null(rpipesenv$callArgs))
+		stop("Define callArgs to use makeR files; see .args file?")
+	return(strsplit(rpipesenv$callArgs, " ")[[1]])
 }
 
 #' Select a list of filenames from a list by extension
