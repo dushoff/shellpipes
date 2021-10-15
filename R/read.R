@@ -1,7 +1,7 @@
 #' Source certain files from a file list
 #' @param fl file list to select from (makeArgs by default)
 #' @param exts extensions to select
-#' @param first (Boolean); should we use the first matched file (usually the master script)?
+#' @param first (Boolean); should we source the first matched file (usually the master script)?
 #' @param verbose (Boolean); passed to source()
 #' @export
 sourceFiles <- function(fl=makeArgs() 
