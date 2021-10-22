@@ -166,10 +166,11 @@ tableRead <- function(pat=NULL, delim=" ", exts=c("csv", "CSV", "ssv", "scsv", "
 #' @param pat optional string pattern to match
 #' @param exts extensions for the table file
 #' @param fl file list (defaults to command arguments)
-#' @param ... additional parameters for read_csv
+#' @param readFun function to use for reading
+#' @param ... additional parameters for readFun
 #' @export
 csvRead <- function(pat=NULL, exts=c("csv", "CSV")
-	, fl = makeArgs(), ...
+	, fl = makeArgs(), readFun=readr::read_csv...
 ){
 	return(readr::read_csv(matchFile(pat, fl, exts), ...))
 }
