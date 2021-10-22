@@ -170,9 +170,9 @@ tableRead <- function(pat=NULL, delim=" ", exts=c("csv", "CSV", "ssv", "scsv", "
 #' @param ... additional parameters for readFun
 #' @export
 csvRead <- function(pat=NULL, exts=c("csv", "CSV")
-	, fl = makeArgs(), readFun=readr::read_csv...
+	, fl = makeArgs(), readFun=readr::read_csv, ...
 ){
-	return(readr::read_csv(matchFile(pat, fl, exts), ...))
+	return(readFun(matchFile(pat, fl, exts), ...))
 }
 
 #' read a tsv matched from a list of files
