@@ -41,7 +41,6 @@ outFile <- function(..., target = targetname(), ext="Rout.txt"){
 #' @param writeFun file for writing
 #' @export
 csvSave <- function(..., target = targetname(), ext="Rout.csv", writeFun=readr::write_csv){
-	(file=paste(target, ext, sep="."), ...)
 	writefun(file=paste(target, ext, sep="."), ...)
 }
 
