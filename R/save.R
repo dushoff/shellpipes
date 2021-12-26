@@ -23,6 +23,7 @@ saveVars <- function(..., target = targetname(), ext="rda"){
 #' @param printSummary 
 #' @export
 rdsSave <- function(object, target = targetname(), ext="rds", printSummary=FALSE){
+	if (printSummary) print(summary(object))
 	saveRDS(object, file=paste(target, ext, sep="."))
 }
 
