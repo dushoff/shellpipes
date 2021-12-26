@@ -16,12 +16,13 @@ saveVars <- function(..., target = targetname(), ext="rda"){
 	save(file=paste(target, ext, sep="."), ...)
 }
 
-#' Serialize with rdsSave using a target stem
+#' Serialize with saveRDS using a target stem
 #' @param object R object to save
 #' @param target stem of file to save to (defaults to name from call)
 #' @param ext file extension (rds)
+#' @param printSummary 
 #' @export
-rdsSave <- function(object, target = targetname(), ext="rds"){
+rdsSave <- function(object, target = targetname(), ext="rds", printSummary=FALSE){
 	saveRDS(object, file=paste(target, ext, sep="."))
 }
 
