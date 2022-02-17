@@ -16,7 +16,7 @@ sourceFiles(
 
 \item{exts}{extensions to select}
 
-\item{first}{(Boolean); should we use the first matched file (usually the master script)?}
+\item{first}{(Boolean); should we source the first matched file (usually the master script)?}
 
 \item{verbose}{(Boolean); passed to source()}
 }

@@ -4,14 +4,21 @@
 \alias{csvSave}
 \title{Save a table to csv}
 \usage{
-csvSave(..., target = targetname(), ext = "Rout.csv")
+csvSave(
+  ...,
+  target = targetname(),
+  ext = "Rout.csv",
+  writeFun = readr::write_csv
+)
 }
 \arguments{
-\item{...}{arguments to write.csv (typically, name of variable to save)}
+\item{...}{arguments to write_csv (typically, name of variable to save)}
 
 \item{target}{stem of file to save to (defaults to name from call)}
 
 \item{ext}{file extension (.Rout.csv)}
+
+\item{writeFun}{function for writing}
 }
 \description{
 Save a table to csv

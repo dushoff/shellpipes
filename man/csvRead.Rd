@@ -4,7 +4,13 @@
 \alias{csvRead}
 \title{read a csv matched from a list of files}
 \usage{
-csvRead(pat = NULL, exts = c("csv", "CSV"), fl = makeArgs(), ...)
+csvRead(
+  pat = NULL,
+  exts = c("csv", "CSV"),
+  fl = makeArgs(),
+  readFun = readr::read_csv,
+  ...
+)
 }
 \arguments{
 \item{pat}{optional string pattern to match}
@@ -13,7 +19,9 @@ csvRead(pat = NULL, exts = c("csv", "CSV"), fl = makeArgs(), ...)
 
 \item{fl}{file list (defaults to command arguments)}
 
-\item{...}{additional parameters for read_csv}
+\item{readFun}{function to use for reading}
+
+\item{...}{additional parameters for readFun}
 }
 \description{
 read a csv matched from a list of files

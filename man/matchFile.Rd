@@ -4,7 +4,7 @@
 \alias{matchFile}
 \title{Try to find a single file matching a given description (usually for reading)}
 \usage{
-matchFile(pat, fl = makeArgs(), exts = NULL)
+matchFile(pat = NULL, fl = makeArgs(), exts = NULL)
 }
 \arguments{
 \item{pat}{is a pattern for matching}
