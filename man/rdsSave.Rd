@@ -2,17 +2,19 @@
 % Please edit documentation in R/save.R
 \name{rdsSave}
 \alias{rdsSave}
-\title{Save a variable to rds}
+\title{Serialize with saveRDS using a target stem}
 \usage{
-rdsSave(vname, target = targetname(), ext = "rds")
+rdsSave(object, target = targetname(), ext = "rds", printSummary = FALSE)
 }
 \arguments{
-\item{vname}{name of variable}
+\item{object}{R object to save}
 
 \item{target}{stem of file to save to (defaults to name from call)}
 
 \item{ext}{file extension (rds)}
+
+\item{printSummary}{}
 }
 \description{
-Save a variable to rds
+Serialize with saveRDS using a target stem
 }

@@ -2,6 +2,8 @@
 ## https://dushoff.github.io/shellpipes/
 ## https://github.com/dushoff/shellpipes.git
 
+newversion: pull quickinstall
+
 current: target
 -include target.mk
 
@@ -14,6 +16,8 @@ vim_session:
 
 ## pkgall:
 ## quickinstall:
+
+Ignore += shellpipes*.tar.gz
 
 ######################################################################
 

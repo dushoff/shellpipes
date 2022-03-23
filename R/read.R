@@ -211,3 +211,18 @@ csvReadList <- function(pat=NULL, exts=c("csv", "CSV")
 	return(csvl)
 }
 
+######################################################################
+
+#' load a TMB shared object
+#' @param pat optional string pattern to match
+#' @param exts extensions for the table file
+#' @param fl file list (defaults to command arguments)
+#' @export
+
+soLoad <- function(pat=NULL, exts=c("so", "SO") , fl = makeArgs())
+{
+	fl <- fileSelect(fl, exts, pat)
+	for (e in exts)
+		fl <- sub(paste0(".", e), "", fl)
+	dyn.load(TMB::dynlib(fl))
+}
