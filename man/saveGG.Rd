@@ -2,7 +2,9 @@
 % Please edit documentation in R/graphics.R
 \name{saveGG}
 \alias{saveGG}
-\title{Apparently ggplot doesn't support pdf well ☹}
+\title{save a ggplot object with a name derived from the target name
+this is good because ggplot objects don't always play well with print
+and because just it's good to attach mnemonic names when you have a lot of files}
 \usage{
 saveGG(g, target = makeArgs()[[1]], ext = "pdf", desc = "ggp", ...)
 }
@@ -18,5 +20,7 @@ saveGG(g, target = makeArgs()[[1]], ext = "pdf", desc = "ggp", ...)
 \item{...}{arguments to pass to ggsave call}
 }
 \description{
-Apparently ggplot doesn't support pdf well ☹
+save a ggplot object with a name derived from the target name
+this is good because ggplot objects don't always play well with print
+and because just it's good to attach mnemonic names when you have a lot of files
 }

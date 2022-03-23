@@ -6,7 +6,7 @@
 \usage{
 loadEnvironments(
   fl = makeArgs(),
-  exts = c("RData", "rda", "rdata"),
+  exts = c("RData", "Rdata", "rda", "rdata"),
   parent = parent.frame()
 )
 }
