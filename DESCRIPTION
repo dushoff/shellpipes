@@ -1,7 +1,7 @@
 Package: shellpipes
 Title: Tools for communicating with the shell
 Description: Utilities for helping R play nicely with the shell and with make.
-Version: 0.0.3
+Version: 0.0.4
 Authors@R: c(person("Jonathan","Dushoff",email="dushoff@mcmaster.ca",role=c("aut","cre")))
 Depends: R (>= 3.5.0)
 Imports: readr, grDevices, utils

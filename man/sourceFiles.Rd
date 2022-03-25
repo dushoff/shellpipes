@@ -2,7 +2,10 @@
 % Please edit documentation in R/read.R
 \name{sourceFiles}
 \alias{sourceFiles}
-\title{Source certain files from a file list}
+\title{Source certain files from a file list
+Usually we are inside the first .R file so we want to source the others (first=FALSE by default)
+If called from a wrapper, we probably want to source the main source file (first in list) _last_.
+Other styles of calling need to be done in a clunky, manual fashion; I've never needed to do this}
 \usage{
 sourceFiles(
   fl = makeArgs(),
@@ -22,4 +25,7 @@ sourceFiles(
 }
 \description{
 Source certain files from a file list
+Usually we are inside the first .R file so we want to source the others (first=FALSE by default)
+If called from a wrapper, we probably want to source the main source file (first in list) _last_.
+Other styles of calling need to be done in a clunky, manual fashion; I've never needed to do this
 }

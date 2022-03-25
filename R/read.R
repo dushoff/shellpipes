@@ -1,4 +1,7 @@
 #' Source certain files from a file list
+#' Usually we are inside the first .R file so we want to source the others (first=FALSE by default)
+#' If called from a wrapper, we probably want to source the main source file (first in list) _last_.
+#' Other styles of calling need to be done in a clunky, manual fashion; I've never needed to do this
 #' @param fl file list to select from (makeArgs by default)
 #' @param exts extensions to select
 #' @param first (Boolean); should we source the first matched file (usually the master script)?
@@ -8,10 +11,10 @@ sourceFiles <- function(fl=makeArgs()
 	, exts=c("R", "r"), first=FALSE, verbose=FALSE)
 {
 	fl <- fileSelect(fl, exts)
-	if (!first) fl <- fl[-1]
-	for (f in fl){
+	if (length(fl)>1) for (f in fl[-1]){
 		source(f, verbose=verbose)
 	}
+	if (first) source(fl[1], verbose=verbose)
 }
 
 ######################################################################
