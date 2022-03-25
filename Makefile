@@ -17,6 +17,8 @@ vim_session:
 ## pkgall:
 ## quickinstall:
 
+Ignore += shellpipes*.tar.gz
+
 ######################################################################
 
 Sources += $(wildcard dev/*.R)
