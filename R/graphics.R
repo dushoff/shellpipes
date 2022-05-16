@@ -51,7 +51,6 @@ saveGG <- function(g
 	, target = makeArgs()[[1]]
 	, ext = "pdf"
 	, desc = "ggp"
-	, crop=TRUE
 	, ...
 )
 {
@@ -73,6 +72,7 @@ teeGG <- function(g
 	, ext = "pdf"
 	, desc = "ggp"
 	, print_title = desc
+	, crop=TRUE
 	, ...
 )
 {
