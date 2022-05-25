@@ -72,6 +72,7 @@ teeGG <- function(g
 	, ext = "pdf"
 	, desc = "ggp"
 	, print_title = desc
+	, crop=TRUE
 	, ...
 )
 {
@@ -79,7 +80,12 @@ teeGG <- function(g
 	fn <- paste0(target, ".", ext)
 	fn <- sub("Rout", desc, fn)
 	ggplot2::ggsave(file=fn, plot=g, ...)
-
+	
+	# Removes extra whitespaces
+	if (crop) {
+		knitr::plot_crop(fn) 
+	}
+	
 	if(!is.null(print_title))
 		g <- g+ggtitle(print_title)
 	print(g)
