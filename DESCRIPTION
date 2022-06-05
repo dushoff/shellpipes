@@ -6,7 +6,7 @@ Authors@R: c(person("Jonathan","Dushoff",email="dushoff@mcmaster.ca",role=c("aut
 Depends: R (>= 3.5.0)
 Imports: readr, grDevices, utils
 Suggests: knitr, ggplot2
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.0
 Encoding: UTF-8
 License: GPL
 LazyData: yes
