@@ -71,6 +71,7 @@ rdsReadList <- function(pat = NULL
 # environment (rda) files
 
 #' Read environments from a file list to a single environment
+#' @param pat pattern to match
 #' @param fl file list to select from (makeArgs by default)
 #' @param exts extensions to select
 #' @param parent (defaults to parent.frame())
