@@ -20,7 +20,7 @@ saveVars <- function(..., target = targetname(), ext="rda"){
 #' @param object R object to save
 #' @param target stem of file to save to (defaults to name from call)
 #' @param ext file extension (rds)
-#' @param printSummary 
+#' @param printSummary logical
 #' @export
 rdsSave <- function(object, target = targetname(), ext="rds", printSummary=FALSE){
 	if (printSummary) print(summary(object))

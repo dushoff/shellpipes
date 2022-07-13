@@ -10,8 +10,6 @@ pipeStar(tag = "pipestar", fl = makeArgs())
 \item{tag}{identifies the passed text}
 
 \item{fl}{is the list of filenames to search (makeArgs by default)}
-
-\item{exts}{is a list of allowed extensions}
 }
 \description{
 Return the starred text passed by make

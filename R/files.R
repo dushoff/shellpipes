@@ -1,4 +1,3 @@
-
 #' Get a targetname
 #' @param ext file extension for output
 #' @param suffix file extension of provided name (.Rout by default)
@@ -20,13 +19,12 @@ matchFile <-  function(pat=NULL, fl = makeArgs(), exts=NULL){
 	if (length(f) == 0) err <- "No match"
 	if (length(f) > 1) err <- "More than one match"
 	if (err=="") return(f)
-	stop("matchFile: ", err, " in makeArgs [ ", pat, "] – ", paste(fl, collapse=" "))
+	stop("matchFile: ", err, " in makeArgs [ ", pat, "] -- ", paste(fl, collapse=" "))
 }
 
 #' Return the starred text passed by make
 #' @param tag identifies the passed text
 #' @param fl is the list of filenames to search (makeArgs by default)
-#' @param exts is a list of allowed extensions
 #' @export
 pipeStar <-  function(tag="pipestar", fl = makeArgs()){
 	f <- matchFile(fl=fl, exts=tag)

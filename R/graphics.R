@@ -66,6 +66,8 @@ saveGG <- function(g
 #' @param ext file extension (will use pdf if not specified)
 #' @param desc text to replace Rout in default target (ggp by default)
 #' @param ... arguments to pass to ggsave call
+#' @param crop logical: use knitr::plot_crop?
+#' @param print_title plot title for the printed version (defaults to desc part of filename)
 #' @export
 teeGG <- function(g
 	, target = makeArgs()[[1]]
@@ -87,6 +89,6 @@ teeGG <- function(g
 	}
 	
 	if(!is.null(print_title))
-		g <- g+ggtitle(print_title)
+		g <- g+ggplot2::ggtitle(print_title)
 	print(g)
 }

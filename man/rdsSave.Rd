@@ -13,7 +13,7 @@ rdsSave(object, target = targetname(), ext = "rds", printSummary = FALSE)
 
 \item{ext}{file extension (rds)}
 
-\item{printSummary}{}
+\item{printSummary}{logical}
 }
 \description{
 Serialize with saveRDS using a target stem

@@ -10,6 +10,7 @@ teeGG(
   ext = "pdf",
   desc = "ggp",
   print_title = desc,
+  crop = TRUE,
   ...
 )
 }
@@ -21,6 +22,10 @@ teeGG(
 \item{ext}{file extension (will use pdf if not specified)}
 
 \item{desc}{text to replace Rout in default target (ggp by default)}
+
+\item{print_title}{plot title for the printed version (defaults to desc part of filename)}
+
+\item{crop}{logical: use knitr::plot_crop?}
 
 \item{...}{arguments to pass to ggsave call}
 }

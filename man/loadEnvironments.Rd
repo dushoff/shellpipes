@@ -5,12 +5,15 @@
 \title{Read environments from a file list to a single environment}
 \usage{
 loadEnvironments(
+  pat = NULL,
   fl = makeArgs(),
   exts = c("RData", "Rdata", "rda", "rdata"),
   parent = parent.frame()
 )
 }
 \arguments{
+\item{pat}{pattern to match}
+
 \item{fl}{file list to select from (makeArgs by default)}
 
 \item{exts}{extensions to select}
