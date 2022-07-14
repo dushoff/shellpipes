@@ -2,7 +2,7 @@
 #' @param ext file extension for output
 #' @param suffix file extension of provided name (.Rout by default)
 #' @param fn provided file name (first of commandArgs by default)
-#' @value a filename to write something to
+#' @return a filename to write something to
 #' @export
 targetname <- function(ext="", suffix="\\.Rout", fn = makeArgs()[[1]]){
 	return(sub(suffix, ext, fn))
