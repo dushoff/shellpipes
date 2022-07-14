@@ -87,6 +87,10 @@ loadEnvironments <- function(pat=NULL, fl = makeArgs()
 	invisible(envl)
 }
 
+#' @export
+#' @rdname loadEnvironments
+rdaLoad <- loadEnvironments
+
 #' Read environments from a file list to a single environment
 #' Deprecated name (a trivial wrapper now for loadEnvironments)
 #' FIXME should just be an alias, if I understood rdnames
