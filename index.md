@@ -39,10 +39,11 @@ Some simple functions are listed below.
 
 ### Setup
 
-```
+``` R
 library(shellpipes) ## to load the package
 startGraphics() ## not strictly necessary, but good practice; can also be used to set height and width
 ## startGraphics() does not do anything in interactive mode unless you over-ride a switch; it's meant to play nicely with interactive users
+```
 
 ### Reading files (see documentation)
 

@@ -33,6 +33,10 @@ plot.Rout: dev/plot.R set.rda
 
 ######################################################################
 
+## index.gh.html: index.md
+
+######################################################################
+
 ### Makestuff
 
 Sources += Makefile notes.txt README.md index.md
@@ -51,6 +55,7 @@ makestuff/Makefile:
 
 -include makestuff/pipeR.mk
 -include makestuff/rpkg.mk
+-include makestuff/pandoc.mk
 
 -include makestuff/git.mk
 -include makestuff/visual.mk
