@@ -15,4 +15,5 @@ up.time
 .*\.Rlog
 .*\.rda
 .*\.log
+.*\.html
 notes.txt

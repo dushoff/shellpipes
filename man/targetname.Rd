@@ -13,6 +13,9 @@ targetname(ext = "", suffix = "\\\\.Rout", fn = makeArgs()[[1]])
 
 \item{fn}{provided file name (first of commandArgs by default)}
 }
+\value{
+a filename to write something to
+}
 \description{
 Get a targetname
 }

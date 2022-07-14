@@ -16,6 +16,19 @@ saveVars <- function(..., target = targetname(), ext="rda"){
 	save(file=paste(target, ext, sep="."), ...)
 }
 
+#' Save variables to rdata
+#' Convenience wrapper for saveEnvironment (all variables) or saveVars (specific variables)
+#' @param target stem of file to save to (defaults to name from call)
+#' @param ext file extension (rda)
+#' @param ... names of variables to save, defaults to NULL which is interpreted as all
+#' @export
+rdaSave <- function(..., target = targetname(), ext="rda"){
+	if (length(list(...))==0)
+		saveEnvironment(target, ext)
+	else
+		saveVars(..., target, ext)
+}
+
 #' Serialize with saveRDS using a target stem
 #' @param object R object to save
 #' @param target stem of file to save to (defaults to name from call)

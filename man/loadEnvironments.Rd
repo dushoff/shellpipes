@@ -2,9 +2,17 @@
 % Please edit documentation in R/read.R
 \name{loadEnvironments}
 \alias{loadEnvironments}
+\alias{rdaLoad}
 \title{Read environments from a file list to a single environment}
 \usage{
 loadEnvironments(
+  pat = NULL,
+  fl = makeArgs(),
+  exts = c("RData", "Rdata", "rda", "rdata"),
+  parent = parent.frame()
+)
+
+rdaLoad(
   pat = NULL,
   fl = makeArgs(),
   exts = c("RData", "Rdata", "rda", "rdata"),

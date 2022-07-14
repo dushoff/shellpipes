@@ -23,13 +23,18 @@ Ignore += shellpipes*.tar.gz
 
 Sources += $(wildcard dev/*.R)
 
+## mess around with ellipsis
+dots.Rout: dev/dots.R
+	$(pipeR)
+
+## testing
 set.Rout: dev/set.R
-	$(makeR)
+	$(pipeR)
 
 look.Rout: dev/look.R set.rda
 
 plot.Rout: dev/plot.R set.rda 
-	$(makeR)
+	$(pipeR)
 
 ######################################################################
 

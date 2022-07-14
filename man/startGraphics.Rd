@@ -2,7 +2,7 @@
 % Please edit documentation in R/graphics.R
 \name{startGraphics}
 \alias{startGraphics}
-\title{Open a graphics file for saving}
+\title{Open a graphics file for saving (by default only works in batch mode)}
 \usage{
 startGraphics(
   target = makeArgs()[[1]],
@@ -27,5 +27,5 @@ startGraphics(
 \item{...}{arguments to pass to grDevices call (via makeGraphics)}
 }
 \description{
-Open a graphics file for saving
+Open a graphics file for saving (by default only works in batch mode)
 }
