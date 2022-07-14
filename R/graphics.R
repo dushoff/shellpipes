@@ -1,5 +1,5 @@
 
-#' Open a graphics file for saving
+#' Open a graphics file for saving (by default only works in batch mode)
 #' @param target stem of filename (defaults to the target of the script)
 #' @param otype type of file to write (defaults to pdf)
 #' @param ext file extension (defaults to otype)
