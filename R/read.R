@@ -101,9 +101,8 @@ commandEnvironments <- function(..., parent=parent.frame()){
 	loadEnvironments(..., parent=parent)
 }
 
-
 #' get a single environment using matchFile, load it and return it
-#' @param pat pattern to macth
+#' @param pat pattern to match
 #' @param fl file list to select from (makeArgs by default)
 #' @param exts extensions to select
 #' @export
@@ -116,6 +115,17 @@ getEnvironment <- function(pat="", fl = makeArgs()
 	e <- new.env()
 	load(f, e)
 	return(e)
+}
+
+#' get a single object from a single environment
+#' @param pat pattern to match environment name
+#' @param oname object name in the environment
+#' @param ... arguments for getEnvironment()
+#' @export
+getEnvObj <- function(oname, pat="", ...)
+{
+	e <- getEnvironment(pat, ...)
+	return(e[[oname]])
 }
 
 #' read environment files and return a list of environments
