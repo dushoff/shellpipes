@@ -133,6 +133,7 @@ getEnvObj <- function(oname, pat="", ...)
 #' @param fl file list to select from (makeArgs by default)
 #' @param exts extensions to select
 #' @param names a list of names for the environments found
+#' @param obj return only named object, not the whole environment
 #' @param trim a pattern for making names from the file names
 #' @export
 loadEnvironmentList <- function(pat = NULL
