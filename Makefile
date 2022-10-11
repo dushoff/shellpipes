@@ -2,7 +2,8 @@
 ## https://dushoff.github.io/shellpipes/
 ## https://github.com/dushoff/shellpipes.git
 
-newversion: pull quickinstall
+newversion: pull
+	$(MAKE) quickinstall
 
 current: target
 -include target.mk
