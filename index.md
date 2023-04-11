@@ -2,7 +2,7 @@
 
 An R package for working through Makefile and command lines. Designed to be used with [makestuff](https://github.com/dushoff/makestuff) and specifically with [pipeR.mk](https://github.com/dushoff/makestuff/blob/master/pipeR.mk).
 
-The shellpipes code is in the [backend of this repo](https://github.com/dushoff/shellpipes))
+The shellpipes code is in the [backend of this repo](https://github.com/dushoff/shellpipes)
 
 ## Installation
 
