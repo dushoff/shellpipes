@@ -41,6 +41,7 @@ makeGraphics <- function(target = makeArgs()[[1]]
 #' save a ggplot object with a name derived from the target name
 #' this is good because ggplot objects don't always play well with print
 #' and because it's good to attach mnemonic names when you have a lot of files
+#' TODO: Should probably have logic for mnemonic names for base plots
 #' @param g graphical object to print
 #' @param target stem of filename (defaults to the target of the script)
 #' @param ext file extension (will use pdf if not specified)
