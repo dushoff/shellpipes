@@ -7,14 +7,15 @@
 #' @param first (Boolean); should we source the first matched file (usually the master script)?
 #' @param verbose (Boolean); passed to source()
 #' @export
+#' first is for when the calling script is some sort of wrapper for the pipeline; should not be needed for pure pipeR projects
 sourceFiles <- function(fl=makeArgs() 
 	, exts=c("R", "r"), first=FALSE, verbose=FALSE)
 {
 	fl <- fileSelect(fl, exts)
+	if (first) source(fl[1], verbose=verbose)
 	if (length(fl)>1) for (f in fl[-1]){
 		source(f, verbose=verbose)
 	}
-	if (first) source(fl[1], verbose=verbose)
 }
 
 ######################################################################
