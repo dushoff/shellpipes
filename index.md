@@ -1,6 +1,8 @@
 # shellpipes
 
-An R package for working through Makefile and command lines. Designed to be used with [makestuff](https://github.com/dushoff/makestuff) and specifically with [pipeR.mk](https://github.com/dushoff/makestuff/blob/master/pipeR.mk) (see [code](https://github.com/dushoff/shellpipes.git))
+An R package for working through Makefile and command lines. Designed to be used with [makestuff](https://github.com/dushoff/makestuff) and specifically with [pipeR.mk](https://github.com/mac-theobio/useMakestuff/blob/master/pipeR.md).
+
+The shellpipes code is in the [here](https://github.com/dushoff/shellpipes) (the back end of the repo that hosts this page).
 
 ## Installation
 
@@ -37,10 +39,9 @@ shellpipes functions work with a list of filenames that can be specified manuall
 
 The idea is that shellpipes expects to _read_ from files in the filename list, and to _write_ to files with the same basename as the target. `pipeR.mk` recognizes that `.Rout` files are made using a shellpipe-friendly call, and that `.rda`, `.rds`, `.Rout.*` and other sorts of files are made as side-effects of `.Rout`.
 
-Some simple functions are listed below.
+A few example functions are listed below. Please see documentation from installed package (BB: feel free to tell me what's the recommended way to put documentation online).
 
 ### Setup
-
 
 ``` R
 library(shellpipes) ## to load the package
@@ -48,9 +49,9 @@ startGraphics() ## not strictly necessary, but good practice; can also be used t
 ## startGraphics() does not do anything in interactive mode unless you over-ride a switch; it's meant to play nicely with interactive users
 ```
 
-### Reading files (see documentation)
+### Reading files
 
-* `loadEnvironments()` loads all environments (typically saved as `.rda`) from the filename list sequentially into the global environment; `getEnvironment()` and `loadEnvironmentList()` do fancier things
+* `loadEnvironments()` loads all environments (typically saved as `.rda`) from the filename list sequentially into the global environment; `getEnvironment()` and `loadEnvironmentList()` allow you to manipulate environments separately
 * `rdsRead()` returns a single serialized object (typically saved as `.rds`) from the filename list; you can use pattern matching to select if necessary
 * `csvRead()` reads a matched csv file using `read_csv()`
 
