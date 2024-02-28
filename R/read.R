@@ -2,12 +2,12 @@
 #' Usually we are inside the first .R file so we want to source the others (first=FALSE by default)
 #' If called from a wrapper, we probably want to source the main source file (first in list) _last_.
 #' Other styles of calling need to be done in a clunky, manual fashion; I've never needed to do this
+#' first is for when the calling script is some sort of wrapper for the pipeline; should not be needed for pure pipeR projects
 #' @param fl file list to select from (makeArgs by default)
 #' @param exts extensions to select
 #' @param first (Boolean); should we source the first matched file (usually the master script)?
 #' @param verbose (Boolean); passed to source()
 #' @export
-#' first is for when the calling script is some sort of wrapper for the pipeline; should not be needed for pure pipeR projects
 sourceFiles <- function(fl=makeArgs() 
 	, exts=c("R", "r"), first=FALSE, verbose=FALSE)
 {
