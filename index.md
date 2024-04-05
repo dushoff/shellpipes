@@ -2,7 +2,7 @@
 
 An R package for working through Makefile and command lines. Designed to be used with [makestuff](https://github.com/dushoff/makestuff) and specifically with [pipeR.mk](https://github.com/mac-theobio/useMakestuff/blob/master/pipeR.md).
 
-The shellpipes code is in the [here](https://github.com/dushoff/shellpipes) (the back end of the repo that hosts this page).
+The shellpipes code is [here](https://github.com/dushoff/shellpipes) (the back end of the repo that hosts this page).
 
 ## Installation
 
@@ -12,11 +12,11 @@ From inside R:
 remotes::install_github("dushoff/shellpipes")
 ```
 
-This will fail for old versions of `remotes` (before 2.2.0), because the default branch is now "main" instead of "master". Adding `, ref="main"` before the last paren may well fix this problem, but you should probably update `remotes` instead:
+This will fail for old versions of `remotes` (before 2.2.0), because the default branch is now "main" instead of "master". Adding `, ref="main"` before the last parenthesis may fix this problem, but you should probably update `remotes` instead:
 
 `install.packages("remotes")`
 
-… and then try again
+… and then try again.
 
 _Alternative_ If you can't `install_github` because of permission problems, try:
 
