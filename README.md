@@ -1,4 +1,3 @@
 # shellpipes
 
-[shellpipes](https://dushoff.github.io/shellpipes/): An R package for working through Makefile and command lines
-
+This page is the back end (and here is [the front end](https://dushoff.github.io/shellpipes/))  for shellpipes, an R package for working through Makefile and command lines.

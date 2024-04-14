@@ -35,7 +35,7 @@ rpipesenv <- new.env()
 rpipesenv$callArgs <- NULL
 
 #' set callArgs for interactive use
-#' @param call command-line call as generated in .Rout.arg
+#' @param call command-line call as generated in .Rout.args
 #' @export
 rpcall <- function(call){
 	rpipesenv$callArgs <- call
