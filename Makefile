@@ -11,7 +11,7 @@ current: target
 # -include makestuff/perl.def
 
 vim_session:
-	bash -cl "vmt R/files.R R/graphics.R R/read.R R/save.R"
+	bash -cl "vmt README.md R/files.R R/graphics.R R/read.R R/save.R"
 
 ######################################################################
 
