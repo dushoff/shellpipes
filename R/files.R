@@ -77,3 +77,18 @@ fileSelect <- function(fl = makeArgs(), exts=NULL, pat=NULL)
 	return(fl)
 }
 
+#' Set a tidyverse-friendly conflicts policy
+#' @export
+manageConflicts <- function(){
+	options(
+		conflicts.policy = list(
+			error = TRUE, warn = FALSE, generics.ok = TRUE
+			, can.mask = c("base", "methods", "utils"
+				, "grDevices", "graphics", "stats"
+			)
+			, depends.ok = TRUE
+		)
+		, tidyverse.quiet = TRUE
+	)
+	invisible(NULL)
+}
