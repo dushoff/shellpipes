@@ -21,7 +21,7 @@ loadEnvironmentList(
 
 \item{names}{a list of names for the environments found}
 
-\item{trim}{a pattern for making names from the file names}
+\item{trim}{a pattern to eliminate when making names from the file names}
 }
 \description{
 read environment files and return a list of environments

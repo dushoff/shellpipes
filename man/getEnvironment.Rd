@@ -7,7 +7,7 @@
 getEnvironment(pat = "", fl = makeArgs(), exts = c("RData", "rda", "rdata"))
 }
 \arguments{
-\item{pat}{pattern to macth}
+\item{pat}{pattern to match}
 
 \item{fl}{file list to select from (makeArgs by default)}
 

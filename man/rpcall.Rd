@@ -7,7 +7,7 @@
 rpcall(call)
 }
 \arguments{
-\item{call}{command-line call as generated in .Rout.arg}
+\item{call}{command-line call as generated in .Rout.args}
 }
 \description{
 set callArgs for interactive use

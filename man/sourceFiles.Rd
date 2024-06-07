@@ -5,7 +5,8 @@
 \title{Source certain files from a file list
 Usually we are inside the first .R file so we want to source the others (first=FALSE by default)
 If called from a wrapper, we probably want to source the main source file (first in list) _last_.
-Other styles of calling need to be done in a clunky, manual fashion; I've never needed to do this}
+Other styles of calling need to be done in a clunky, manual fashion; I've never needed to do this
+first is for when the calling script is some sort of wrapper for the pipeline; should not be needed for pure pipeR projects}
 \usage{
 sourceFiles(
   fl = makeArgs(),
@@ -28,4 +29,5 @@ Source certain files from a file list
 Usually we are inside the first .R file so we want to source the others (first=FALSE by default)
 If called from a wrapper, we probably want to source the main source file (first in list) _last_.
 Other styles of calling need to be done in a clunky, manual fashion; I've never needed to do this
+first is for when the calling script is some sort of wrapper for the pipeline; should not be needed for pure pipeR projects
 }

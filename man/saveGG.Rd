@@ -4,9 +4,17 @@
 \alias{saveGG}
 \title{save a ggplot object with a name derived from the target name
 this is good because ggplot objects don't always play well with print
-and because just it's good to attach mnemonic names when you have a lot of files}
+and because it's good to attach mnemonic names when you have a lot of files
+TODO: Should probably have logic for mnemonic names for base plots}
 \usage{
-saveGG(g, target = makeArgs()[[1]], ext = "pdf", desc = "ggp", ...)
+saveGG(
+  g,
+  target = makeArgs()[[1]],
+  ext = "pdf",
+  desc = "ggp",
+  crop = TRUE,
+  ...
+)
 }
 \arguments{
 \item{g}{graphical object to print}
@@ -17,10 +25,13 @@ saveGG(g, target = makeArgs()[[1]], ext = "pdf", desc = "ggp", ...)
 
 \item{desc}{text to replace Rout in default target (ggp by default)}
 
+\item{crop}{logical: use knitr::plot_crop?}
+
 \item{...}{arguments to pass to ggsave call}
 }
 \description{
 save a ggplot object with a name derived from the target name
 this is good because ggplot objects don't always play well with print
-and because just it's good to attach mnemonic names when you have a lot of files
+and because it's good to attach mnemonic names when you have a lot of files
+TODO: Should probably have logic for mnemonic names for base plots
 }
