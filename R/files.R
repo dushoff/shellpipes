@@ -78,11 +78,30 @@ fileSelect <- function(fl = makeArgs(), exts=NULL, pat=NULL)
 }
 
 #' Set a tidyverse-friendly conflicts policy
+#' Just crashes out; doesn't provide good fixes
+#' Should be deprecated, maybe for reportConflicts
 #' @export
 manageConflicts <- function(){
 	options(
 		conflicts.policy = list(
 			error = TRUE, warn = FALSE, generics.ok = TRUE
+			, can.mask = c("base", "methods", "utils"
+				, "grDevices", "graphics", "stats"
+			)
+			, depends.ok = TRUE
+		)
+		, tidyverse.quiet = TRUE
+	)
+	invisible(NULL)
+}
+
+#' Let tidyverse mask stuff it knows about
+#' Warn for other conflicts without crashing
+#' @export
+reportConflicts <- function(){
+	options(
+		conflicts.policy = list(
+			error = FALSE, warn = FALSE, generics.ok = TRUE
 			, can.mask = c("base", "methods", "utils"
 				, "grDevices", "graphics", "stats"
 			)
