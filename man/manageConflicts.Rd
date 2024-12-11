@@ -2,10 +2,20 @@
 % Please edit documentation in R/files.R
 \name{manageConflicts}
 \alias{manageConflicts}
-\title{Set a tidyverse-friendly conflicts policy}
+\title{Set conflicts to trigger an error, and provide a way to work around them
+Assume conflicts with base packages are OK by default}
 \usage{
-manageConflicts()
+manageConflicts(
+  base = c("base", "methods", "utils", "grDevices", "graphics", "stats"),
+  add = NULL
+)
+}
+\arguments{
+\item{base}{is the base package list}
+
+\item{add}{is an additional package list}
 }
 \description{
-Set a tidyverse-friendly conflicts policy
+Set conflicts to trigger an error, and provide a way to work around them
+Assume conflicts with base packages are OK by default
 }

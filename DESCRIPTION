@@ -1,7 +1,7 @@
 Package: shellpipes
 Title: Tools for communicating with the shell
 Description: Utilities for helping R play nicely with the shell and with make.
-Version: 0.0.5
+Version: 0.1.0
 Authors@R: c(person("Jonathan","Dushoff",email="dushoff@mcmaster.ca",role=c("aut","cre")))
 Depends: R (>= 3.5.0)
 Imports: readr, grDevices
@@ -10,5 +10,4 @@ RoxygenNote: 7.3.2
 Encoding: UTF-8
 License: GPL
 LazyData: yes
-VignetteBuilder: knitr
 URL: https://github.com/dushoff/shellpipes

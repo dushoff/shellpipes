@@ -77,18 +77,19 @@ fileSelect <- function(fl = makeArgs(), exts=NULL, pat=NULL)
 	return(fl)
 }
 
-#' Set a tidyverse-friendly conflicts policy
-#' Just crashes out; doesn't provide good fixes
-#' Should be deprecated, maybe for reportConflicts
+#' Set conflicts to trigger an error, and provide a way to work around them
+#' Assume conflicts with base packages are OK by default
+#' @param base is the base package list
+#' @param add is an additional package list
 #' @export
-manageConflicts <- function(){
+manageConflicts <- function(
+	base= c("base", "methods", "utils" , "grDevices", "graphics", "stats")
+	, add = NULL
+){
 	options(
 		conflicts.policy = list(
 			error = TRUE, warn = FALSE, generics.ok = TRUE
-			, can.mask = c("base", "methods", "utils"
-				, "grDevices", "graphics", "stats"
-			)
-			, depends.ok = TRUE
+			, can.mask = c(base, add), depends.ok = TRUE
 		)
 		, tidyverse.quiet = TRUE
 	)
@@ -101,7 +102,7 @@ manageConflicts <- function(){
 reportConflicts <- function(){
 	options(
 		conflicts.policy = list(
-			error = FALSE, warn = FALSE, generics.ok = TRUE
+			error = FALSE, warn = TRUE, generics.ok = TRUE
 			, can.mask = c("base", "methods", "utils"
 				, "grDevices", "graphics", "stats"
 			)
